@@ -5,7 +5,7 @@
 		</scroll-view>
 		<scroll-view class="right" scroll-y="">
 			<view class="item" v-for="item of subCategory" :key="item.cat_id">
-				<image :src="item.img"></image>
+				<image :src="item.img" @click="previewImg(item.img)"></image>
 				<text>{{item.cat_name}}</text>
 			</view>
 			<text v-if="subCategory.length == 0">暂无数据</text>
@@ -42,6 +42,15 @@
 				}).then(res=>res.data.data)
 				this.category = res
 				console.log(res)
+			},
+			previewImg(url){
+				const res = this.subCategory.map(item=>item.img)
+				// console.log(res)
+				uni.previewImage({
+					current:url,
+					urls:res,
+					loop:true
+				})
 			}
 		}
 	}

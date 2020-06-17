@@ -1,6 +1,6 @@
 <template>
 	<view class="goods-list">
-		<goods-list :goodsList="goodsList"></goods-list>
+		<goods-list :goodsList="goodsList" @goGoodsDetail="goGoodsDetail"></goods-list>
 		<view class="isOver" v-if="flag">
 			-----已经触底了------
 		</view>
@@ -54,6 +54,12 @@
 				this.totalPage =Math.ceil(res.total/this.count)
 				this.goodsList = this.goodsList.concat(res.goods)
 				callback&&callback()
+			},
+			goGoodsDetail(id){
+				console.log(id)
+				uni.navigateTo({
+					url:'/pages/goods-detail/goods-detail?id='+id
+				})
 			}
 		}
 	}

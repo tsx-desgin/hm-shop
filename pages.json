@@ -30,6 +30,14 @@
             "path" : "pages/pics/pics",
             "style" : {}
         }
+        ,{
+            "path" : "pages/detail/detail",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/goods-detail/goods-detail",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

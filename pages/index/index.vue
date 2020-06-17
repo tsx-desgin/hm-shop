@@ -17,7 +17,7 @@
 			<view class="title">
 				推荐商品
 			</view>
-			<goods-list :goodsList="goodsList"></goods-list>
+			<goods-list @goGoodsDetail="goGoodsDetail" :goodsList="goodsList"></goods-list>
 		</view>
 	</view>
 </template>
@@ -97,6 +97,13 @@
 				console.log(url)
 				uni.navigateTo({
 					url
+				})
+			},
+			// 导航到商品详情
+			goGoodsDetail(id){
+				console.log(id)
+				uni.navigateTo({
+					url:'/pages/goods-detail/goods-detail?id='+id
 				})
 			}
 		}

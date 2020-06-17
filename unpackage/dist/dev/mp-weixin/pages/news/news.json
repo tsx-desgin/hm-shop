@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "new-list": "/components/news-item/news-item"
+  }
 }
